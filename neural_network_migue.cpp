@@ -68,18 +68,19 @@ std::string get_migue_classification(std::string name){
 	float index_migue = know_neuron_migue(name);
 	float index_migue_master = know_neuron_migue_master(name);
 	if(index_not_migue > index_migue && index_not_migue > index_migue_master){
-		migue_classification = "Nao eh migue";
+		migue_classification = "nao eh migue.";
 	}else if(index_migue > index_not_migue && index_migue > index_migue_master){
-		migue_classification = "Eh um migue";
+		migue_classification = "eh um migue.";
 	}else{
-		migue_classification = "Eh um migue master";
+		migue_classification = "eh um migue master.";
 	}
 	return migue_classification;
 }
 
 int main(int argc, char** argv) {
 	std::string name;
+	std::cout <<  "\n\n\nDigite o nome da pessoa para eu falar da procedencia de miguelagem dela: " << std::endl;
 	std::cin >> name;
-	std::cout <<  get_migue_classification(name) << std::endl;
+	std::cout <<  "\n\nResultado: essa pessoa " + get_migue_classification(name) << std::endl;
 	return 0;
 }
